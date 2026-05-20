@@ -1,11 +1,11 @@
 [Unit]
-Description=Crond Setup
+Description=Setup Service to handle Container setup
 After=network.target
 Wants=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/setup-cron.sh
+ExecStart=/usr/local/bin/setup.sh
 Restart=on-failure
 RestartSec=10
 
@@ -13,7 +13,7 @@ RestartSec=10
 NoNewPrivileges=true
 ProtectSystem=strict
 ProtectHome=yes
-ReadWritePaths=/var/spool/cron /var/log /data
+ReadWritePaths=/data
 
 [Install]
 WantedBy=multi-user.target

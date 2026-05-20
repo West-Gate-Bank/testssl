@@ -1,5 +1,5 @@
 [Unit]
-Description=Run runner when i tell it
+Description=Scheduled timer to handle same tasks as crond does but for a single purpose
 
 
 /[Timer]

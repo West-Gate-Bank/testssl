@@ -9,9 +9,10 @@ services:
       # email rewrite domain on who the email is from
       - EMAIL_DOMAIN=westgate.bank
       - TZ=America/Chicago
+      - RECIPIENT_TO="cchapman@westgate.bank"
+      - RECIPIENT_FROM="testssl@westgate.bank"
+      - SUBJECT="Monthly SSL Report"
+
     volumes:
       # I have example files in the repo for email.txt domains.txt emailaddres.txt and mycron
-      - ./email.txt:/data/email.txt:ro
       - ./domains.txt:/data/domains.txt:ro
-      - ./emailaddress.txt:/data/emailaddress.txt
-      - ./mycron:/etc/cron.d/mycron

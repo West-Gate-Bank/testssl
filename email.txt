@@ -1,3 +1,0 @@
-To: ngebhard@westgate.bank,landerson@westgate.bank,cchapman@westgate.bank
-From: wgbdocker@westgate.bank
-Subject: Monthly SSL Grades
