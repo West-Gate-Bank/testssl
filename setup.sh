@@ -11,5 +11,5 @@ echo "inet_interfaces = loopback-only" >> /etc/postfix/main.cf
 echo "mydestination = " >> /etc/postfix/main.cf
 echo "$RECIPIENT_TO" > /data/emailaddress.txt
 echo "To: $RECIPIENT_TO" > /data/email.txt
-echo "From: RECIPIENT_FROM" >> /data/email.txt
+echo "From: $RECIPIENT_FROM" >> /data/email.txt
 echo "Subject: $SUBJECT" >> /data/email.txt

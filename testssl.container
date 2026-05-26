@@ -1,39 +1,25 @@
 [Unit]
-
 Description=Scheduled Testssl Service
-
 After=network-online.target
-
 Wants=network-online.target
 
-
 [Container]
-
 Image=ghcr.io/west-gate-bank/testssl:ubi
-
-
 PodmanArgs=--authfile=%h/.config/containers/auth.json
-
 ContainerName=testssl
 
 # Always pull latest image
-
 Pull=always
-
 AutoUpdate=registry
 
 # Equivalent to privileged: true
-
 PodmanArgs=--privileged
 
 # Keep stdin/tty open
-
 PodmanArgs=--tty
-
 PodmanArgs=--interactive
 
 # Timezone
-
 Environment=TZ=America/Chicago
 Environment=EMAIL_SERVER=10.1.0.11
 Environment=EMAIL_DOMAIN=westgate.bank
@@ -54,41 +40,25 @@ Environment=SUBJECT="Monthly SSL Report"
 #HealthStartPeriod=40s
 
 # Memory limit
-
 Memory=256m
 
 # Volumes
-
 Volume=%h/testssl/domains.txt:/data/domains.txt:ro
-
 Volume=/sys/fs/cgroup:/sys/fs/cgroup:ro
 
 # tmpfs mounts
-
 Tmpfs=/tmp
-
 Tmpfs=/run
-
 Tmpfs=/run/lock
-
 # Logging
-
 LogDriver=json-file
-
 LogOpt=max-size=10m
-
 LogOpt=max-file=3
 
-
 [Service]
-
 Restart=always
-
 RestartSec=10
-
 TimeoutStopSec=30
 
-
 [Install]
-
 WantedBy=default.target
